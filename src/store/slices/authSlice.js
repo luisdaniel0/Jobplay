@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import {register, login, logout} from ".."
+import {register, login} from "../../services/user"
 
 const token = localStorage.getItem('token')
   ? localStorage.getItem('token')
@@ -18,47 +18,49 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    reset: (state) => {
+    logout: (state) => {
       state.isLoading = false
       state.isSuccess = false
       state.isError = false
       state.message = ''
+      state.user = null
+      state.token = null;
+      localStorage.removeItem("token");
     },
     extraReducers: (builder) => {
       builder
-        // .addCase(register.pending, (state) => {
-        //   state.isLoading = true
-        // })
-        // .addCase(register.fulfilled, (state, action) => {
-        //   state.isLoading = false
-        //   state.isSuccess = true
-        //   state.user = action.payload
-        // })
-        // .addCase(register.rejected, (state, action) => {
-        //   state.isLoading = false
-        //   state.isError = true
-        //   state.message = action.payload
-        //   state.user = null
-        // })
-        // .addCase(login.pending, (state) => {
-        //   state.isLoading = true
-        // })
-        // .addCase(login.fulfilled, (state, action) => {
-        //   state.isLoading = false
-        //   state.isSuccess = true
-        //   state.user = action.payload
-        // })
-        // .addCase(login.rejected, (state, action) => {
-        //   state.isLoading = false
-        //   state.isError = true
-        //   state.message = action.payload
-        //   state.user = null
-        // })
-        // .addCase(logout.fulfilled, (state) => {
-        //   state.user = null
-        //   state.token = null;
-        //   localStorage.removeItem("token");
-        // })
+        .addCase(register.pending, (state) => {
+          state.isLoading = true
+        })
+        .addCase(register.fulfilled, (state, action) => {
+          state.isLoading = false
+          state.isSuccess = true
+          state.user = action.payload
+          state.token = payload.token;
+        })
+        .addCase(register.rejected, (state, action) => {
+          state.isLoading = false
+          state.isError = true
+          state.message = action.payload
+          state.user = null
+          state.token = payload.token;
+        })
+        .addCase(login.pending, (state) => {
+          state.isLoading = true
+        })
+        .addCase(login.fulfilled, (state, action) => {
+          state.isLoading = false
+          state.isSuccess = true
+          state.user = action.payload
+          state.token = payload.token;
+        })
+        .addCase(login.rejected, (state, action) => {
+          state.isLoading = false
+          state.isError = true
+          state.message = action.payload
+          state.user = null
+          state.token = payload.token;
+        })
     },
   },
 });
