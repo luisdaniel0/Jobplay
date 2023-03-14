@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./components/Protection/ProtectedRoutes";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBS from "./components/Navbar/Nav.jsx"
+import SkillList from "./pages/SkillList/SkillList";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           {/* <Route path="/" element={<DashBoard />} /> */}
         </Route>
+        <Route path="/skills" element={<SkillList />} />
         {/* <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} /> */}
       </Routes>
