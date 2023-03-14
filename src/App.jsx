@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoutes />}>
           <Route path="/skills" element={<SkillList />} />
-          {/* <Route path="/" element={<DashBoard />} /> */}
+          <Route path="/skills/new" element={<NewSkill />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
         <Route path="/" element={<Home />} />
