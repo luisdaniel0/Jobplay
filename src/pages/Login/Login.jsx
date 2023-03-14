@@ -6,20 +6,21 @@ import { useForm } from "react-hook-form";
 import "./Login.css";
 
 function Login() {
-  const { loading, userInfo } = useSelector((state) => state.auth);
+  const { isLoading, user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    if (userInfo) {
+    if (user) {
       navigate("/", { replace: true });
     }
-  }, [navigate, userInfo]);
+  }, [navigate, user]);
 
   const submitForm = (data) => {
     data.email = data.email.toLowerCase();
     dispatch(login(data));
+    navigate("/", { replace: true });
   };
 
   return (
@@ -44,9 +45,9 @@ function Login() {
           <button
             type="submit"
             className="login-btns login-btn"
-            disabled={loading}
+            disabled={isLoading}
           >
-            {loading ? <h1>Loading...</h1> : "Login In"}
+            {isLoading ? <h1>Loading...</h1> : "Login In"}
           </button>
         </form>
         <Link to="/signup" className="login-btns sign-up">
