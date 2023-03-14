@@ -4,9 +4,9 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
-import ProtectedRoutes from "./components/Protection/ProtectedRoutes";
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavBS from "./components/Navbar/Nav.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBS from "./components/Navbar/Nav.jsx"
+import SkillList from "./pages/SkillList/SkillList";
 import "./App.css";
 
 function App() {
@@ -15,6 +15,8 @@ function App() {
       <NavBS />
       <Routes>
         <Route element={<ProtectedRoutes />}>
+          <Route path="/skills" element={<SkillList />} />
+          {/* <Route path="/" element={<DashBoard />} /> */}
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
         <Route path="/" element={<Home />} />
