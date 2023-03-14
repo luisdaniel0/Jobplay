@@ -2,21 +2,10 @@ import api from "./apiConfig";
 import jwtDecode from "jwt-decode";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getUser = createAsyncThunk("auth/getUser", async () => {
-  try {
-    const decoded = jwtDecode(localStorage.getItem("token"));
-    const id = decoded.user_id;
-    const { data } = await api.get(`/api/user/${id}`);
-    return data;
-  } catch (error) {
-    console.log(error)
-    throw error;
-  }
-});
 
-export const signUp = createAsyncThunk("auth/register", async (credentials) => {
+export const signUp = createAsyncThunk("auth/signup", async (credentials) => {
   try {
-    const { data } = await api.post(`/api/auth/register/`, credentials);
+    const { data } = await api.post(`/api/auth/signup/`, credentials);
     localStorage.setItem("token", data.token);
     return data;
   } catch (error) {

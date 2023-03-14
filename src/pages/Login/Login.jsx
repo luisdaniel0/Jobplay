@@ -18,7 +18,7 @@ function Login() {
   }, [navigate, userInfo]);
 
   const submitForm = (data) => {
-    data.username = data.username.toLowerCase();
+    data.email = data.email.toLowerCase();
     dispatch(login(data));
   };
 
@@ -29,9 +29,9 @@ function Login() {
         <form className="login-form" onSubmit={handleSubmit(submitForm)}>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="Email"
             className="form-input"
-            {...register("username")}
+            {...register("email")}
             required
           />
           <input
