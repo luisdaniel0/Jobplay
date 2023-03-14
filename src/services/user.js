@@ -14,7 +14,7 @@ export const getUser = createAsyncThunk("auth/getUser", async () => {
   }
 });
 
-export const register = createAsyncThunk("auth/register", async (credentials) => {
+export const signUp = createAsyncThunk("auth/register", async (credentials) => {
   try {
     const { data } = await api.post(`/api/auth/register/`, credentials);
     localStorage.setItem("token", data.token);
