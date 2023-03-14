@@ -1,10 +1,60 @@
-import React from 'react'
-import "./Login.css"
+import { useNavigate, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../services/user";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import "./Login.css";
 
-const Login = () => {
+function Login() {
+  const { loading, userInfo } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/", { replace: true });
+    }
+  }, [navigate, userInfo]);
+
+  const submitForm = (data) => {
+    data.username = data.username.toLowerCase();
+    dispatch(login(data));
+  };
+
   return (
-    <div>Login</div>
-  )
+    <div className="login-container">
+
+      <div className="login-form-container">
+        <form className="login-form" onSubmit={handleSubmit(submitForm)}>
+          <input
+            type="text"
+            placeholder="Username"
+            className="form-input"
+            {...register("username")}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="form-input"
+            {...register("password")}
+            required
+          />
+          <button
+            type="submit"
+            className="login-btns login-btn"
+            disabled={loading}
+          >
+            {loading ? <h1>Loading...</h1> : "Login In"}
+          </button>
+        </form>
+        <Link to="/signup" className="login-btns sign-up">
+          Sign Up
+        </Link>
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

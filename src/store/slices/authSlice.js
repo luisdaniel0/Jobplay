@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {register, login} from "../../services/user"
+import {signUp, login} from "../../services/user"
 
 const token = localStorage.getItem('token')
   ? localStorage.getItem('token')
@@ -29,16 +29,16 @@ const authSlice = createSlice({
     },
     extraReducers: (builder) => {
       builder
-        .addCase(register.pending, (state) => {
+        .addCase(signUp.pending, (state) => {
           state.isLoading = true
         })
-        .addCase(register.fulfilled, (state, action) => {
+        .addCase(signUp.fulfilled, (state, action) => {
           state.isLoading = false
           state.isSuccess = true
           state.user = action.payload
           state.token = payload.token;
         })
-        .addCase(register.rejected, (state, action) => {
+        .addCase(signUp.rejected, (state, action) => {
           state.isLoading = false
           state.isError = true
           state.message = action.payload
