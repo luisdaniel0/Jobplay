@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-     <NavBS />
+      <NavBS />
       <Routes>
         <Route element={<ProtectedRoutes />}>
           {/* <Route path="/" element={<DashBoard />} /> */}
