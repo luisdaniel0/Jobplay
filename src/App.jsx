@@ -16,9 +16,9 @@ function App() {
       <NavBS />
       <Routes>
         <Route element={<ProtectedRoutes />}>
+        <Route path="/skills" element={<SkillList />} />
           {/* <Route path="/" element={<DashBoard />} /> */}
         </Route>
-        <Route path="/skills" element={<SkillList />} />
         {/* <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} /> */}
       </Routes>
