@@ -26,6 +26,7 @@ const authSlice = createSlice({
       state.user = null
       localStorage.removeItem("token");
     },
+  },
     extraReducers: (builder) => {
       builder
         .addCase(signUp.pending, (state) => {
@@ -56,7 +57,6 @@ const authSlice = createSlice({
           state.message = action.payload
           state.user = null
         })
-    },
   },
 });
 

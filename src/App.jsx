@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Login from "./pages/Login/Login";
+import ProtectedRoutes from "./components/Protection/ProtectedRoutes"
+import Login from "./pages/Login/Login";  
 import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import 'bootstrap/dist/css/bootstrap.min.css';
