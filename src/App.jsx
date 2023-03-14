@@ -1,9 +1,8 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
 import { Routes, Route } from "react-router-dom";
 // import DashBoard from "./DashBoard.jsx";
 import Login from "./pages/Login/Login";
-// import Register from "./Register.jsx";
+import Register from "./pages/Register/Register";
 import ProtectedRoutes from "./components/Protection/ProtectedRoutes";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBS from "./components/Navbar/Nav.jsx"
@@ -14,11 +13,11 @@ function App() {
     <div className="App">
      <NavBS />
       <Routes>
-        {/* <Route element={<ProtectedRoutes />}>
-          <Route path="/" element={<Login />} />
-        </Route> */}
+        <Route element={<ProtectedRoutes />}>
+          {/* <Route path="/" element={<Dashboard />} /> */}
+        </Route>
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/signup" element={<Register />} /> */}
+        <Route path="/signup" element={<Register />} />
       </Routes>
     </div>
   );
