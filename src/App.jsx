@@ -5,11 +5,14 @@ import { Routes, Route } from "react-router-dom";
 // import Login from "./Login.jsx";
 // import Register from "./Register.jsx";
 import ProtectedRoutes from "./components/Protection/ProtectedRoutes";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBS from "./components/Navbar/Nav.jsx"
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
+     <NavBS />
       <Routes>
         <Route element={<ProtectedRoutes />}>
           {/* <Route path="/" element={<DashBoard />} /> */}
