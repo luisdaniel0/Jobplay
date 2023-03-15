@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { index, createSkill, update  } from '../../services/skillService'
 import { Col, Card } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import './SkillList.css'
 import AddSkillBtn from '../../components/AddSkillBtn/AddSkillBtn'
+import './SkillList.css'
 
 const SkillList = () => {
   const navigate = useNavigate()
@@ -39,16 +39,9 @@ const SkillList = () => {
     )
   }
 
-  
   const handleAddSkill = async (skillData) => {
     const newSkill  = await createSkill(skillData)
     setSkills([newSkill, ...skills])
-  }
-  
-  const handleUpdateSkill = async (skillData) => {
-    const updatedSkill = await update(skillData)
-    setSkills(skills.map((skill) => skillData._id === skill._id ? updatedSkill : skill))
-    navigate('/skills')
   }
 
   useEffect(() => {
