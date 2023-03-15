@@ -41,39 +41,48 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                     Status
                 </Form.Label>
                 <Col sm={10}>
-                    <Form.Check
-                        required
-                        type="radio"
-                        label="Applied"
-                        name="status"
-                        id="applied"
-                        value="APPLIED"
-                        onChange={handleJobFormChange}
-                    />
-                    <Form.Check
-                        required
-                        type="radio"
-                        label="Not Applied"
-                        name="status"
-                        id="not-applied"
-                        value="NOT-APPLIED"
-                        onChange={handleJobFormChange}
-                    />
-                    <Form.Check
-                        required
-                        type="radio"
-                        label="In-Progress"
-                        name="status"
-                        id="in-progress"
-                        value="IN-PROGRESS"
-                        onChange={handleJobFormChange}
-                    />
+                    <Form.Select aria-label="Default select example" name="status" onChange={handleJobFormChange}>
+                        <option selected disabled>Select</option>
+                        <option
+                            required
+                            id="applied"
+                            value="APPLIED"
+                        >
+                            Applied
+                        </option>
+
+                        <option
+                            required
+                            id="not-applied"
+                            value="NOT-APPLIED"
+                        >
+                            In-Progress
+                        </option>
+
+                        <option
+                            required
+                            id="not-applied"
+                            value="NOT-APPLIED"
+                        >
+                            Not Applied
+                        </option>
+                    </Form.Select>
                 </Col>
             </Form.Group>
 
+            <Form.Control className="mb-3"
+                as="textarea"
+                name="notes"
+                placeholder="Notes"
+                id="notes"
+                value={jobFormData.notes}
+                onChange={handleJobFormChange}
+                style={{ height: '100px' }}
+            />
+
             <Form.Group as={Row} className="mb-3">
                 <Col sm={{ span: 10, offset: 2 }}>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">Save Job Info</Button>
                 </Col>
             </Form.Group>
         </Form>
