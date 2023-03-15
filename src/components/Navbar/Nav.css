@@ -1,8 +1,18 @@
 .nav-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid rgb(8, 8, 8);
-  height: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+}
+@media only screen and (max-width: 430px) and (max-height: 932px) {
+  .nav-container {
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
 }

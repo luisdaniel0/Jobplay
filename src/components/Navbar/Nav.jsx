@@ -3,34 +3,25 @@ import "./Nav.css"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom"
+import award from "../imgs/award.png"
+import job from "../imgs/job.png"
+import network from "../imgs/networking.png"
+import dash from "../imgs/dashboard.png"
+import skills from "../imgs/skills.png"
 
 function BasicExample() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" className="nav-container">
       <Container>
-        <Navbar.Brand as={Link}to={"/"}>Avatar here</Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/dashboard"}><img src={dash} alt="dashboard" /></Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/skills"}><img src={skills} alt="skills" /></Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/jobs"}><img src={job} alt="jobs" /></Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/networking"}><img src={network} alt="network" /></Navbar.Brand>
+        <Navbar.Brand as={Link}to={"/awards"}><img src={award} alt='award' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-              <Nav.Link as={Link} to={"/dashboard"}>Dashboard</Nav.Link>
-            <NavDropdown title="Gain Rewards" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link}to={'/jobs'}>Jobs</NavDropdown.Item>
-              <NavDropdown.Item as={Link}to={'/network'}>
-                Network
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link}to={'/skills'}>Skills</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link}to={'/signup'}>
-                Sign Up
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link}to={'/login'}>
-                Login
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+        
+            
       </Container>
       </Navbar>
   );
