@@ -38,7 +38,7 @@ const SkillList = () => {
       <div key={skill._id} className="skill-card">
         <Card>
           <Card.Body>
-            <Card.Title className='font-weight-bold mb-5'>{skill.skillName}</Card.Title>
+            <Card.Title className='card-title'>{skill.skillName}</Card.Title>
             <Card.Text className="text-muted">
               Added {(() => {
                 const { days, hours, minutes } = getTimeDifference(skill.createdAt);
