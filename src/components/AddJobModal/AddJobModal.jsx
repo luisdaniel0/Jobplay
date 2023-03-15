@@ -33,9 +33,9 @@ const AddJobModal = (props) => {
     >
 
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+        {/* <Modal.Title id="contained-modal-title-vcenter">
           Add Job
-        </Modal.Title>
+        </Modal.Title> */}
       </Modal.Header>
 
       <Modal.Body>
