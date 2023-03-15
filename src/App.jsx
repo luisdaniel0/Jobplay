@@ -5,12 +5,11 @@ import ProtectedRoutes from "./components/Protection/ProtectedRoutes"
 import Login from "./pages/Login/Login";  
 import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
-import ProtectedRoutes from "./components/Protection/ProtectedRoutes";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import NavBS from "./components/Navbar/Nav.jsx"
 import Jobs from "./pages/Jobs/Jobs";
 import SkillList from "./pages/SkillList/SkillList";
+import NewSkill from "./components/AddSkillModal/AddSkillModal";
 import NetworkList from "./pages/NetworkList/NetworkList";
 
 import "./App.css";
