@@ -8,7 +8,7 @@ function AddSkillForm({ skillFormData, handleSkillFormChange, handleSkillFormSub
         <Form onSubmit={handleSkillFormSubmit}>
             <Form.Group as={Row} className="mb-3">
                 <Form.Label column sm={2}>
-                    Skill Name
+                    Skill:
                 </Form.Label>
                 <Col sm={10}>
                     <Form.Control
