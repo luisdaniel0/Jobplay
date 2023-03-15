@@ -17,7 +17,7 @@ function BasicExample() {
         <Navbar.Brand as={Link} to={"/dashboard"}><img src={dash} alt="dashboard" /></Navbar.Brand>
         <Navbar.Brand as={Link} to={"/skills"}><img src={skills} alt="skills" /></Navbar.Brand>
         <Navbar.Brand as={Link} to={"/jobs"}><img src={job} alt="jobs" /></Navbar.Brand>
-        <Navbar.Brand as={Link} to={"/networking"}><img src={network} alt="network" /></Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/network"}><img src={network} alt="network" /></Navbar.Brand>
         <Navbar.Brand as={Link}to={"/awards"}><img src={award} alt='award' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         
