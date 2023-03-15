@@ -1,0 +1,87 @@
+.skill-container {
+  margin-bottom: 5rem;
+}
+
+.skill-header {
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-row {
+  margin-bottom: 1rem;
+}
+
+.skill-card {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 100%;
+  z-index: -5;
+}
+
+.skill-card .card {
+  height: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #f6f5f5;
+  border-radius: 24px;
+  border: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.skill-card .card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card .card .card-body {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pill-button {
+  background-color: transparent;
+  border: 2px solid #8ac4e1;
+  border-radius: 50px;
+  color: black;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  transition-duration: 0.4s;
+  outline: none;
+  height: 40px;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+
+.pill-button:hover {
+  background-color: #8ac4e1;
+  color: white;
+}
+
+.pill-button.active {
+  background-color: #8ac4e1;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  .pill-button {
+    font-size: 14px;
+    padding: 4px 20px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 575px) {
+  .pill-button {
+    font-size: 12px;
+    padding: 3px 15px;
+  }
+}

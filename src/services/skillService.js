@@ -26,3 +26,4 @@ export const update = async (id, SkillData) => {
     throw error;
   }
 };
+
