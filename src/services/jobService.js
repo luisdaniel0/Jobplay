@@ -18,7 +18,7 @@ const createJob = async (jobData) => {
     }
 }
 
-const updateJob = async (jobData) => {
+const updateJob = async (id, jobData) => {
     try {
         const response = await api.put(`/api/jobs/${id}/`, jobData);
         return response.data;
@@ -36,4 +36,13 @@ const deleteJob = async (id) => {
     }
 }
 
-export { index, createJob, updateJob, deleteJob }
+const showJob = async (id, jobData) => {
+    try {
+        const response = await api.get(`/api/jobs/${id}/`, jobData);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
+
+export { index, createJob, updateJob, deleteJob, showJob }
