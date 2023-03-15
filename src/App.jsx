@@ -10,6 +10,7 @@ import NavBS from "./components/Navbar/Nav.jsx"
 import Jobs from "./pages/Jobs/Jobs";
 import SkillList from "./pages/SkillList/SkillList";
 import NetworkList from "./pages/NetworkList/NetworkList";
+import Badges from "./pages/Badges/Badges";
 
 import "./App.css";
 
@@ -24,6 +25,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/network" element={<NetworkList />} />
           <Route path="/jobs/" element={<Jobs />} />
+          <Route path="/badge" element={<Badges />}/>
+          
         </Route>
 
         <Route path="/" element={<Home />} />
