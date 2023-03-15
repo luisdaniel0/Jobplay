@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './SkillList.css'
-import { index, create, update  } from '../../services/skillService'
+import { index, update  } from '../../services/skillService'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
