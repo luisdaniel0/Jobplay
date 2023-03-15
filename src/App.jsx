@@ -8,6 +8,7 @@ import Register from "./pages/Register/Register";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBS from "./components/Navbar/Nav.jsx"
 import SkillList from "./pages/SkillList/SkillList";
+import NetworkList from "./pages/NetworkList/NetworkList";
 import "./App.css";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path="/skills" element={<SkillList />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/skills" element={<SkillList />} />
+          <Route path="/network" element={<NetworkList />} />
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

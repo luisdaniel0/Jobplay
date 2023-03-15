@@ -5,7 +5,7 @@ import * as networkService from '../../services/networkService'
 
 const NetworkList = () => {
   return (
-    <div>NetworkList</div>
+    <div>This is my NetworkList</div>
   )
 }
 
