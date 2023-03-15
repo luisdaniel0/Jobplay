@@ -17,12 +17,6 @@ const SkillList = () => {
     fetchAllSkills()
   }, [])
 
-  const handleAddSkill = async (skillData) => {
-    const newSkill = await create(skillData)
-    setSkills([newSkill, ...skills])
-    navigate('/skills')
-  }
-
   const handleUpdateSkill = async (skillData) => {
     const updatedSkill = await update(skillData)
     setSkills(skills.map((skill) => skillData._id === skill._id ? updatedSkill : skill))

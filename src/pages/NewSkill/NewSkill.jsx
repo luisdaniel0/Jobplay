@@ -1,35 +1,43 @@
-import React, { useState } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { createSkill } from '../../services/skillService'
 
 function NewSkill() {
-  const [skillName, setSkillName] = useState('')
-  const navigate = useNavigate()
+  const [form, setForm] =useState({
+    content: '',
+  })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSkillName('')
+  const handleAddSkill = async (skillData) => {
+    const newSkill = await createSkill(skillData)
+    setSkills([newSkill, ...skills])
     navigate('/skills')
   }
 
+  const handleChange = ({ target }) => {
+    setForm({ ...form, [target.name]: target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    handleAddSkill(form)
+  }
+
   return (
-    <Container className="mt-4">
+    <div>
       <h2>Add New Skill</h2>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="skillName">
-          <Form.Label>Skill Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter skill name"
-            value={skillName}
-            onChange={(e) => setSkillName(e.target.value)}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Add Skill
-        </Button>
-      </Form>
-    </Container>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="skillName">Skill Name:</label>
+        <input
+          type="text"
+          name="skillName"
+          id="skillName-input"
+          value={form.content}
+          required
+          placeholder="Add Skill"
+          onChange={handleChange}
+        />
+        <button type="submit">Add Skill</button>
+      </form>
+    </div>
   );
 }
 
