@@ -1,22 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import JobCard from '../../Components/JobCard/JobCard'
 import JobsFilter from '../../Components/JobFilter/JobFilter'
 import AddJobBtn from '../../Components/AddJobBtn/AddJobBtn'
 
 
-const Jobs = ({ jobs, handleAddJob }) => {
+const Jobs = ({ jobs, handleAddJob, handleDeleteJob, handleJobFilter }) => {
   const days = "X"
-  const filters = ['All Jobs', 'Applied', 'In-Progress', 'Starred']
+  const filters = ['All Jobs', 'Applied', 'Not-Applied', 'In-Progress', 'Starred']
 
   const loaded = () => {
     let allJobs = jobs.map(job => {
       return (
         <div key={job._id}>
           <JobCard
-            main={job.title}
-            sub={job.company}
-            sub2={job.status}
-            sub3={`Applied ${days} days ago`}
+            title={job.title}
+            company={job.company}
+            status={job.status}
+            starred={job.starred}
+            id={job._id}
+            sub={`Applied ${days} days ago`}
+            handleDeleteJob={handleDeleteJob}
           />
         </div>
       )
@@ -44,8 +47,9 @@ const Jobs = ({ jobs, handleAddJob }) => {
       <h1 style={{ textDecoration: "underline" }}>Jobs</h1>
 
       <div>
-        <JobsFilter 
+        <JobsFilter
           filters={filters}
+          handleJobFilter={handleJobFilter}
         />
         <AddJobBtn
           handleAddJob={handleAddJob}

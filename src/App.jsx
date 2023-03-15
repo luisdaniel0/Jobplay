@@ -20,10 +20,33 @@ import * as jobService from './services/jobService.js'
 function App() {
   const [jobs, setJobs] = useState()
 
+  const [filteredJobs, setFilteredJobs] = useState(jobs)
+
+  const handleJobFilter = (filter = "ALL JOBS") => {
+    let filterWord = filter.toUpperCase()
+
+    if (filterWord === "ALL JOBS") {
+      console.log("jobs", jobs)
+      setFilteredJobs(jobs)
+    }
+    else if (filterWord === "STARRED") {
+      let jobFilter = jobs.filter(job => job.starred === true)
+      setFilteredJobs(jobFilter)
+    }
+    else {
+      let jobFilter = jobs.filter(job => job.status === filterWord)
+      setFilteredJobs(jobFilter)
+    }
+  }
+
   const handleAddJob = async (jobData) => {
     const newJob = await jobService.createJob(jobData)
-    console.log("newJob", newJob)
     setJobs([newJob, ...jobs])
+  }
+
+  const handleDeleteJob = async (id) => {
+    const deletedJob = await jobService.deleteJob(id)
+    setJobs(jobs.filter(job => job._id !== deletedJob._id))
   }
 
   useEffect(() => {
@@ -48,8 +71,10 @@ function App() {
           <Route path="/jobs/"
             element={
               <Jobs
-                jobs={jobs}
+                jobs={filteredJobs}
                 handleAddJob={handleAddJob}
+                handleDeleteJob={handleDeleteJob}
+                handleJobFilter={handleJobFilter}
               />
             }
           />
