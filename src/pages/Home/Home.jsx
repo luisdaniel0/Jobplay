@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import jobPlaylogo from "../../components/imgs/jobPlaylogo.png"
 
 function Home() {
   // const user = { name: "Hello" };
@@ -10,7 +11,7 @@ function Home() {
       <div className="home-logo-container">
         <img
           className="home-logo"
-          src="https://images-platform.99static.com//gLPHksdH2OdHv_KDM_cwpKUtyCE=/115x100:1067x1052/fit-in/500x500/99designs-contests-attachments/117/117444/attachment_117444264"
+          src={jobPlaylogo}
         ></img>
       </div>
       <div className="home-center">
