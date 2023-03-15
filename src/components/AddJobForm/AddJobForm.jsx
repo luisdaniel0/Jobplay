@@ -12,7 +12,7 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                 </Form.Label>
                 <Col sm={10}>
                     <Form.Control
-                        // type="title"
+                        required
                         name="title"
                         placeholder="Job Title"
                         value={jobFormData.title}
@@ -27,7 +27,7 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                 </Form.Label>
                 <Col sm={10}>
                     <Form.Control
-                        // type="company"
+                        required
                         name="company"
                         placeholder="Company"
                         value={jobFormData.company}
@@ -42,6 +42,7 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                 </Form.Label>
                 <Col sm={10}>
                     <Form.Check
+                        required
                         type="radio"
                         label="Applied"
                         name="status"
@@ -50,6 +51,7 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                         onChange={handleJobFormChange}
                     />
                     <Form.Check
+                        required
                         type="radio"
                         label="Not Applied"
                         name="status"
@@ -58,6 +60,7 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                         onChange={handleJobFormChange}
                     />
                     <Form.Check
+                        required
                         type="radio"
                         label="In-Progress"
                         name="status"
