@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from 'react-bootstrap/Container';
 import "./Dashboard.css";
+import { dashInfo } from "../../assets/dashcard";
 
 function DashBoard() {
   const { user } = useSelector((state) => state.auth);
@@ -23,13 +24,14 @@ function DashBoard() {
 
   return (
     <div className="dashboard">
-      <Row xs={1} md={1} className="g-3">
-        {Array.from({ length: 3 }).map((_, idx) => (
+      <Row xs={1} md={1} lg={2} className="g-3">
+        {dashInfo.map((card, idx) => (
           <Col key={idx} className="d-flex justify-content-center align-item-center">
-            <DashCard />
+            <DashCard card={card}/>
           </Col>
         ))}
       </Row>
+      <div className="rock"></div>
     </div>
   );
 }

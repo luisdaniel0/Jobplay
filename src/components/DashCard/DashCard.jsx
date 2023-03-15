@@ -1,19 +1,19 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import jobIcon from "../../assets/Job.png";
+import { useNavigate } from "react-router";
 
-const DashCard = () => {
+const DashCard = ({ card }) => {
+  const navigate = useNavigate()
+  const navi = () => {
+    navigate(`/${card.link}`);
+  }
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={jobIcon} />
+    <Card className="card-cont" onClick={navi}>
+      <Card.Img style={{ width: "11rem"}} className="card-img" src={card.icon} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <div>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-        </div>
+        <Card.Title>{card.title}</Card.Title>
+          <Card.Text>50 {card.body}</Card.Text>
       </Card.Body>
     </Card>
   );
