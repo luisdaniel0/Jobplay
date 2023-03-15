@@ -2,8 +2,11 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import Star from '../../assets/Star.png'
+import FilledStar from '../../assets/FilledStar.png'
 
-function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
+
+function AddJobForm({ star, jobFormData, handleFavorite, handleUnfavorite, handleJobFormChange, handleJobFormSubmit }) {
     return (
         <Form onSubmit={handleJobFormSubmit}>
             <Form.Group as={Row} className="mb-3">
@@ -17,6 +20,7 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                         placeholder="Job Title"
                         value={jobFormData.title}
                         onChange={handleJobFormChange}
+
                     />
                 </Col>
             </Form.Group>
@@ -41,10 +45,15 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                     Status
                 </Form.Label>
                 <Col sm={10}>
-                    <Form.Select aria-label="Default select example" name="status" onChange={handleJobFormChange}>
+                    <Form.Select
+                        aria-label="Default select example"
+                        name="status"
+                        style={{ width: '50%' }}
+                        onChange={handleJobFormChange}
+                        required
+                    >
                         <option selected disabled>Select</option>
                         <option
-                            required
                             id="applied"
                             value="APPLIED"
                         >
@@ -52,19 +61,10 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                         </option>
 
                         <option
-                            required
-                            id="not-applied"
-                            value="NOT-APPLIED"
+                            id="in-progress"
+                            value="IN-PROGRESS"
                         >
                             In-Progress
-                        </option>
-
-                        <option
-                            required
-                            id="not-applied"
-                            value="NOT-APPLIED"
-                        >
-                            Not Applied
                         </option>
                     </Form.Select>
                 </Col>
@@ -80,9 +80,15 @@ function AddJobForm({ jobFormData, handleJobFormChange, handleJobFormSubmit }) {
                 style={{ height: '100px' }}
             />
 
+            <img
+                src={star ? FilledStar : Star}
+                onClick={star ? handleUnfavorite : handleFavorite}
+                style={{ cursor: 'pointer', float: 'right' }}
+            />
+
             <Form.Group as={Row} className="mb-3">
                 <Col sm={{ span: 10, offset: 2 }}>
-                    <Button type="submit">Save Job Info</Button>
+                    <Button type="submit" className="save-job-btn">Save Job Info</Button>
                 </Col>
             </Form.Group>
         </Form>
