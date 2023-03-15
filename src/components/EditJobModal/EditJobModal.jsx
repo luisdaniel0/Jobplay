@@ -21,8 +21,7 @@ const EditJobModal = (props) => {
         setEditJobFormData({ ...editJobFormData, [event.target.name]: event.target.value })
     }
 
-    const handleEditJobFormSubmit = (event) => {
-        // event.preventDefault()
+    const handleEditJobFormSubmit = () => {
         props.handleEditJob(props.id, editJobFormData)
     }
 
