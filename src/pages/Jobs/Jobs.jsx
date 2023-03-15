@@ -61,7 +61,7 @@ const Jobs = () => {
             status={job.status}
             starred={job.starred}
             id={job._id}
-            sub={`Applied ${days} days ago`}
+            createdDate={job.createdAt}
             handleDeleteJob={handleDeleteJob}
           />
         </div>
@@ -99,7 +99,9 @@ const Jobs = () => {
         />
       </div>
 
-      {jobs ? loaded() : loading()}
+      <div className="job-card-container">
+        {jobs ? loaded() : loading()}
+      </div>
 
     </div>
   )
