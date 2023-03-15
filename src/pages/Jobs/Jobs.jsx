@@ -7,8 +7,7 @@ import * as jobService from '../../services/jobService.js'
 
 
 const Jobs = () => {
-  const days = "X"
-  const filters = ['All Jobs', 'Applied', 'Not-Applied', 'In-Progress', 'Starred']
+  const filters = ['All Jobs', 'Applied', 'In-Progress', 'Starred']
 
   const [jobs, setJobs] = useState()
   const [filteredJobs, setFilteredJobs] = useState()
@@ -41,6 +40,15 @@ const Jobs = () => {
     window.location.reload()
   }
 
+  const handleEditJob = async (id, jobData) => {
+    console.log('edit job data', jobData)
+    const editedJob = await jobService.updateJob(id, jobData)
+    const newJobsArray = jobs.map(job =>
+      job._id === editedJob._id ? editedJob : job
+    )
+    setJobs(newJobsArray)
+  }
+
   useEffect(() => {
     const getAllJobs = async () => {
       const data = await jobService.index()
@@ -54,14 +62,19 @@ const Jobs = () => {
   const loaded = () => {
     let allJobs = filteredJobs.map(job => {
       return (
-        <div key={job._id}>
+        <div
+          key={job._id}
+          className="d-flex justify-content-center align-item-center col"
+        >
           <JobCard
             title={job.title}
             company={job.company}
             status={job.status}
             starred={job.starred}
+            notes={job.notes}
             id={job._id}
             createdDate={job.createdAt}
+            handleEditJob={handleEditJob}
             handleDeleteJob={handleDeleteJob}
           />
         </div>
@@ -86,7 +99,7 @@ const Jobs = () => {
   console.log(jobs)
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid g-3 row row-cols-lg-2 row-cols-md-1 row-cols-1">
       <h1 style={{ textDecoration: "underline" }}>Jobs</h1>
 
       <div>

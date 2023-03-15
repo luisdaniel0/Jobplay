@@ -1,3 +1,2 @@
-.job-card-container {
-    margin-bottom: 10%;
-}
+@import '../../Components/JobCardModal/JobCardModal.css';
+@import '../../Components/AddJobForm/AddJobForm.css';
