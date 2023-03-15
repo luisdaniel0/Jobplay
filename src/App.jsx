@@ -42,6 +42,7 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoutes />}>
           <Route path="/skills" element={<SkillList />} />
+          <Route path="/skills/new" element={<NewSkill />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/network" element={<NetworkList />} />
           <Route path="/jobs/"
