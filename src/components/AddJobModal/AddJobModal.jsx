@@ -20,9 +20,7 @@ const AddJobModal = (props) => {
   }
 
   const handleJobFormSubmit = (event) => {
-    event.preventDefault()
-
-    console.log('jobFormData', jobFormData)
+    // event.preventDefault()
     props.handleAddJob(jobFormData)
   }
 

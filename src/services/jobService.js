@@ -29,7 +29,7 @@ const updateJob = async (jobData) => {
 
 const deleteJob = async (id) => {
     try {
-        const response = await api.delete(`/api/jobs/${id}/`, jobData);
+        const response = await api.delete(`/api/jobs/${id}/`);
         return response.data;
     } catch (error) {
         throw error;
