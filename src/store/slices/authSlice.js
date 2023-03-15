@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {signUp, login} from "../../services/user"
+import { signUp, login } from "../../services/user"
+import jwtDecode from "jwt-decode";
 
-const token = localStorage.getItem('token')
-  ? localStorage.getItem('token')
+const user = localStorage.getItem('token')
+  ? jwtDecode(localStorage.getItem("token"))
   : null
 
 const initialState = {
-  user: null,
+  user: user ? user.user : null,
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: '',
-  token,
 };
 
 const authSlice = createSlice({
@@ -24,9 +24,9 @@ const authSlice = createSlice({
       state.isError = false
       state.message = ''
       state.user = null
-      state.token = null;
       localStorage.removeItem("token");
     },
+  },
     extraReducers: (builder) => {
       builder
         .addCase(signUp.pending, (state) => {
@@ -36,14 +36,12 @@ const authSlice = createSlice({
           state.isLoading = false
           state.isSuccess = true
           state.user = action.payload
-          state.token = payload.token;
         })
         .addCase(signUp.rejected, (state, action) => {
           state.isLoading = false
           state.isError = true
           state.message = action.payload
           state.user = null
-          state.token = payload.token;
         })
         .addCase(login.pending, (state) => {
           state.isLoading = true
@@ -52,16 +50,13 @@ const authSlice = createSlice({
           state.isLoading = false
           state.isSuccess = true
           state.user = action.payload
-          state.token = payload.token;
         })
         .addCase(login.rejected, (state, action) => {
           state.isLoading = false
           state.isError = true
           state.message = action.payload
           state.user = null
-          state.token = payload.token;
         })
-    },
   },
 });
 

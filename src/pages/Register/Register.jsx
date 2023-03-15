@@ -26,12 +26,13 @@ function Register() {
       setCustomError("Password mismatch");
       return;
     }
-    if (data.password.length < 8) {
-      setCustomError("Password need to be atleast 8 characters");
+    if (data.password.length < 5) {
+      setCustomError("Password need to be atleast 5 characters");
       return;
     }
-    data.username = data.username.toLowerCase();
+    data.name = data.name.toLowerCase();
     data.email = data.email.toLowerCase();
+    console.log(data)
     dispatch(signUp(data));
   };
 
@@ -43,9 +44,9 @@ function Register() {
           {customError && <h1>{customError}</h1>}
           <input
             type="text"
-            placeholder="Enter Username"
+            placeholder="Enter name"
             className="form-input"
-            {...register("username")}
+            {...register("name")}
             required
           />
           <input
@@ -58,7 +59,7 @@ function Register() {
           <input
             type="password"
             placeholder="Enter Password"
-            minLength="8"
+            minLength="5"
             className="form-input"
             {...register("password")}
             required
