@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBS from "./components/Navbar/Nav.jsx"
 import Jobs from "./pages/Jobs/Jobs";
 import SkillList from "./pages/SkillList/SkillList";
-import NewSkill from "./components/AddSkillModal/AddSkillModal";
 import NetworkList from "./pages/NetworkList/NetworkList";
 
 import "./App.css";
