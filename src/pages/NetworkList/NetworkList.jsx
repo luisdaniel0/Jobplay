@@ -3,10 +3,15 @@ import * as networkService from '../../services/networkService'
 import { Col, Card, Container, Row, ButtonGroup, Button } from 'react-bootstrap';
 import AddNetworkBtn from '../../components/AddNetworkBtn/AddNetworkBtn';
 import './NetworkList.css'
+import { getProfile } from "../../services/Profile";
+import { useSelector } from 'react-redux'
+
 
 const NetworkList = () => {
   const [networks, setNetworks] = useState([])
   const [networkFilter, setNetworkFilter] = useState('all')
+  const [profile, setProfile] = useState({});
+  const { user } = useSelector((state) => state.auth)
 
   const handleaddnetwork = async (networkData) => {
     const newNetwork  = await networkService.create(networkData)
@@ -24,6 +29,10 @@ const NetworkList = () => {
   
     return { days, hours, minutes, seconds };
   };
+    const fetchProfile = async () => {
+      const profile = await getProfile(user.profile);
+      setProfile(profile);
+    };
 
   useEffect(() => {
     const fetchAllNetworks = async () => {
@@ -31,6 +40,8 @@ const NetworkList = () => {
       setNetworks(data)
     }
     fetchAllNetworks()
+    fetchProfile();
+
   }, [])
   
   const loaded = () => {
@@ -45,6 +56,8 @@ const NetworkList = () => {
     }
 
     console.log(filteredNetwork);
+    console.log(networks)
+    console.log(profile)
 
     let allNetworks = filteredNetwork.map(network => {
       return (
