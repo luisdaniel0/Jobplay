@@ -2,5 +2,8 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-    padding: 0;
+}
+
+.edit-job-form-group {
+    padding: 0 16px 0 16px;
 }

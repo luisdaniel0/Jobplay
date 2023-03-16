@@ -9,6 +9,8 @@ import './EditJobModal.css'
 const EditJobModal = (props) => {
     const { loading, user } = useSelector((state) => state.auth)
 
+    const [star, setStar] = useState(props.starred)
+
     const [editJobFormData, setEditJobFormData] = useState({
         title: props.title,
         company: props.company,
@@ -17,7 +19,19 @@ const EditJobModal = (props) => {
         notes: props.notes,
         applicant: user.profile,
     })
-    
+
+    const handleFavorite = async () => {
+        setEditJobFormData({ ...editJobFormData, starred: true })
+        props.handleEditJob(props.id, editJobFormData)
+        setStar(true)
+    }
+
+    const handleUnfavorite = async () => {
+        setEditJobFormData({ ...editJobFormData, starred: false })
+        props.handleEditJob(props.id, editJobFormData)
+        setStar(false)
+    }
+
     const handleEditJobFormChange = (event) => {
         setEditJobFormData({ ...editJobFormData, [event.target.name]: event.target.value })
     }
@@ -42,6 +56,9 @@ const EditJobModal = (props) => {
                 <EditJobForm
                     editJobFormData={editJobFormData}
                     id={props.id}
+                    star={star}
+                    handleFavorite={handleFavorite}
+                    handleUnfavorite={handleUnfavorite}
                     handleDeleteJob={props.handleDeleteJob}
                     handleEditJobFormChange={handleEditJobFormChange}
                     handleEditJobFormSubmit={handleEditJobFormSubmit}

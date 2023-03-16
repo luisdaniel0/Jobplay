@@ -17,12 +17,12 @@ const JobCardModal = (props) => {
             aria-labelledby="contained-modal-title-vcenter"
             centered
             style={{ width: "370px", margin: "auto", position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
-            >
+        >
 
             <Modal.Header closeButton />
 
-            <Modal.Body>
-                <div className="job-card-modal-desc">
+            <Modal.Body className="job-card-modal-body">
+                <div className="job-card-modal-desc" style={{ paddingTop: "16px" }}>
                     <p className="job-card-modal-body-title">Job Title:</p>
                     <p className="job-card-modal-body-detail">
                         {props.title}
@@ -43,19 +43,21 @@ const JobCardModal = (props) => {
                     </p>
                 </div>
 
-                <button
-                    type="submit"
-                    className="edit-job-btn"
-                    onClick={() => setModalShow(true)}
-                    style={{ display: "inline-block" }}
-                >
-                    Edit Job Info
-                </button>
+                <div style={{ paddingBottom: "16px" }}>
+                    <button
+                        type="submit"
+                        className="edit-job-btn mb-3"
+                        onClick={() => setModalShow(true)}
+                        style={{ display: "inline-block" }}
+                    >
+                        Edit Job Info
+                    </button>
 
-                <img
-                    src={props.starred ? FilledStar : Star}
-                    style={{ cursor: 'pointer', display: "inline-block", marginLeft: "100px" }}
-                />
+                    <img
+                        src={props.starred ? FilledStar : Star}
+                        style={{ cursor: 'pointer', display: "inline-block", marginLeft: "75px" }}
+                    />
+                </div>
 
 
                 <EditJobModal

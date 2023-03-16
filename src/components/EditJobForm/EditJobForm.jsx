@@ -1,18 +1,19 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Star from '../../assets/Star.png'
+import FilledStar from '../../assets/FilledStar.png'
+
 
 import Trash from '../../assets/Trash.png'
 
 import './EditJobForm.css'
 
-const EditJobForm = ({ editJobFormData, id, handleDeleteJob, handleEditJobFormChange, handleEditJobFormSubmit }) => {
+const EditJobForm = ({ editJobFormData, id, star, handleFavorite, handleUnfavorite, handleDeleteJob, handleEditJobFormChange, handleEditJobFormSubmit }) => {
     return (
         <>
             <Form className="edit-job-form" onSubmit={handleEditJobFormSubmit}>
-                <Form.Group as={Row}>
+                <Form.Group className="edit-job-form-group" style={{ paddingTop: "16px" }} as={Row}>
                     <Form.Label className="edit-job-form-label">
                         Job Title
                     </Form.Label>
@@ -26,7 +27,7 @@ const EditJobForm = ({ editJobFormData, id, handleDeleteJob, handleEditJobFormCh
                     />
                 </Form.Group>
 
-                <Form.Group as={Row}>
+                <Form.Group className="edit-job-form-group" as={Row}>
                     <Form.Label className="edit-job-form-label" column sm={2}>
                         Company
                     </Form.Label>
@@ -39,7 +40,14 @@ const EditJobForm = ({ editJobFormData, id, handleDeleteJob, handleEditJobFormCh
                     />
                 </Form.Group>
 
-                <Form.Group as={Row}>
+                <img
+                    src={star ? FilledStar : Star}
+                    onClick={star ? handleUnfavorite : handleFavorite}
+                    style={{ cursor: 'pointer', float: 'right', margin: '38px 20px 0 0' }}
+                />
+
+
+                <Form.Group className="edit-job-form-group" style={{ padding: '0' }} as={Row}>
                     <Form.Label className="edit-job-form-label" as="legend" column sm={2}>
                         Status
                     </Form.Label>
@@ -68,7 +76,7 @@ const EditJobForm = ({ editJobFormData, id, handleDeleteJob, handleEditJobFormCh
                 </Form.Group>
 
 
-                <Form.Group as={Row}>
+                <Form.Group className="edit-job-form-group" as={Row}>
                     <Form.Label className="edit-job-form-label" column sm={2}>
                         Notes
                     </Form.Label>
@@ -89,10 +97,8 @@ const EditJobForm = ({ editJobFormData, id, handleDeleteJob, handleEditJobFormCh
                     style={{ cursor: 'pointer', float: 'right', marginTop: '26px' }}
                 />
 
-                <Form.Group as={Row} className="mb-3">
-                    <Col sm={{ span: 10, offset: 2 }} style={{ display: "flex", justifyContent: "space-between" }}>
-                        <button type="submit" className="save-job-btn">Save Job Info</button>
-                    </Col>
+                <Form.Group className="mb-3" as={Row} style={{ paddingBottom: "16px" }}>
+                    <button type="submit" className="save-job-btn">Save Job Info</button>
                 </Form.Group>
             </Form>
 
