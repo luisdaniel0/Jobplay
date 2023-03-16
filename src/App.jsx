@@ -11,9 +11,9 @@ import Jobs from "./pages/Jobs/Jobs";
 import SkillList from "./pages/SkillList/SkillList";
 import NetworkList from "./pages/NetworkList/NetworkList";
 import Badges from "./pages/Badges/Badges";
-
 import "./App.css";
 import Reward from "./pages/Reward/Reward";
+import RewardPage from "./components/RewardPage/RewardPage";
 
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
           <Route path="/network" element={<NetworkList />} />
           <Route path="/jobs/" element={<Jobs />} />
           <Route path="/reward/" element={<Reward />} />
+          <Route path="/rewardpage" element={<RewardPage />} />
           <Route path="/badge" element={<Badges />}/>
         </Route>
 

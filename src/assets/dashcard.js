@@ -1,6 +1,6 @@
-import jobIcon from "./Job.png";
-import skillIcon from "./Skill.png"
-import connectIcon from "./Connect.png"
+import jobIcon from "./Job Icon.png";
+import skillIcon from "./Skills Icon.png"
+import connectIcon from "./Networking Icon.png"
 import calenderIcon from "./Calendar Icon.png"
 
 export const dashInfo = [

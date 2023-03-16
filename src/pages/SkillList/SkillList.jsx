@@ -3,16 +3,17 @@ import { index, createSkill } from '../../services/skillService';
 import { Col, Card, Container, Row, ButtonGroup } from 'react-bootstrap';
 import AddSkillBtn from '../../components/AddSkillBtn/AddSkillBtn';
 import './SkillList.css';
+import { useNavigate } from "react-router-dom";
 
 const SkillList = () => {
   const [skills, setSkills] = useState([])
   const [filter, setFilter] = useState('all')
+  const navigate = useNavigate();
 
   const getTimeDifference = (date) => {
     const now = new Date();
     const createdDate = new Date(date);
     const diffInSeconds = Math.floor((now - createdDate) / 1000);
-  
     const days = Math.floor(diffInSeconds / 86400);
     const hours = Math.floor(diffInSeconds / 3600) % 24;
     const minutes = Math.floor(diffInSeconds / 60) % 60;
@@ -60,7 +61,7 @@ const SkillList = () => {
     return <div>There are no skills...</div>;
   };
 
-  const handleAddSkill = async skillData => {
+  const handleAddSkill = async (skillData) => {
     const newSkill = await createSkill(skillData);
     setSkills([newSkill, ...skills]);
   };

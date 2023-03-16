@@ -33,6 +33,7 @@ function Reward() {
 
   return (
     <div className="reward">
+      {profile.length === 1 ? <p>hello</p> : null}
       <div className="reward-top">
         <h1 className="reward-name">
           {profile.name.charAt(0).toUpperCase() + profile.name.slice(1)}
@@ -50,7 +51,7 @@ function Reward() {
         md={3}
         lg={4}
         className="g-3"
-        style={{ background: "#e5dcd4", height: "50vh", marginTop: 1, borderRadius: "1rem" }}
+        style={{ background: "#e5dcd4", height: "80vh", width: "90vw", margin: "1rem", borderRadius: "1rem" }}
       >
         {profile.badge.map((badge, idx) => (
           <Col key={idx}>
