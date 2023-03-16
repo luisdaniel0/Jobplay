@@ -59,10 +59,10 @@ JobPlay is an innovative and engaging web application that revolutionizes the wa
 ---
 
 # Ice Box 🧊
-- [] Social Media Integration
-- [] Job Recommendations
-- [] Skill Challenges and Peer Collaboration
-- [] Calendar Integration
-- [] Consultation System
-- [] Customizable Leaderboards
-- [] More Rewards, Badges
+- [ ] Social Media Integration
+- [ ] Job Recommendations
+- [ ] Skill Challenges and Peer Collaboration
+- [ ] Calendar Integration
+- [ ] Consultation System
+- [ ] Customizable Leaderboards
+- [ ] More Rewards, Badges
