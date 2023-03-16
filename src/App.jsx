@@ -13,6 +13,7 @@ import NetworkList from "./pages/NetworkList/NetworkList";
 import Badges from "./pages/Badges/Badges";
 
 import "./App.css";
+import Reward from "./pages/Reward/Reward";
 
 
 function App() {
@@ -25,8 +26,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/network" element={<NetworkList />} />
           <Route path="/jobs/" element={<Jobs />} />
+          <Route path="/reward/" element={<Reward />} />
           <Route path="/badge" element={<Badges />}/>
-          
         </Route>
 
         <Route path="/" element={<Home />} />
