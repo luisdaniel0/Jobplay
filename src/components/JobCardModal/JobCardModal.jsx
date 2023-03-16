@@ -22,7 +22,7 @@ const JobCardModal = (props) => {
             <Modal.Header closeButton />
 
             <Modal.Body className="job-card-modal-body">
-                <div className="job-card-modal-desc">
+                <div className="job-card-modal-desc" style={{ paddingTop: "16px" }}>
                     <p className="job-card-modal-body-title">Job Title:</p>
                     <p className="job-card-modal-body-detail">
                         {props.title}
