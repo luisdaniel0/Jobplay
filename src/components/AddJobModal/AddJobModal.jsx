@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import AddJobForm from '../AddJobForm/AddJobForm'
 import { useDispatch, useSelector } from 'react-redux'
 
+import "./AddJobModal.css"
 
 const AddJobModal = (props) => {
   const { loading, user } = useSelector((state) => state.auth)
@@ -33,8 +34,7 @@ const AddJobModal = (props) => {
     setFormData({ ...jobFormData, [event.target.name]: event.target.value })
   }
 
-  const handleJobFormSubmit = (event) => {
-    // event.preventDefault()
+  const handleJobFormSubmit = () => {
     props.handleAddJob(jobFormData)
   }
 
@@ -45,11 +45,12 @@ const AddJobModal = (props) => {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      style={{ width: "370px", margin: "auto", position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
     >
 
       <Modal.Header closeButton/>
 
-      <Modal.Body>
+      <Modal.Body className="add-job-modal-body">
         <AddJobForm
           star={star}
           jobFormData={jobFormData}

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import JobCard from '../../Components/JobCard/JobCard'
 import JobsFilter from '../../Components/JobFilter/JobFilter'
-import AddJobBtn from '../../Components/AddJobBtn/AddJobBtn'
+
+import { Col, Row, Container } from 'react-bootstrap'
 
 import * as jobService from '../../services/jobService.js'
 
+import "./Jobs.css"
 
 const Jobs = () => {
   const filters = ['All Jobs', 'Applied', 'In-Progress', 'Starred']
@@ -41,7 +43,6 @@ const Jobs = () => {
   }
 
   const handleEditJob = async (id, jobData) => {
-    console.log('edit job data', jobData)
     const editedJob = await jobService.updateJob(id, jobData)
     const newJobsArray = jobs.map(job =>
       job._id === editedJob._id ? editedJob : job
@@ -96,26 +97,28 @@ const Jobs = () => {
     )
   }
 
-  console.log(jobs)
 
   return (
-    <div className="container-fluid g-3 row row-cols-lg-2 row-cols-md-1 row-cols-1">
-      <h1 style={{ textDecoration: "underline" }}>Jobs</h1>
+    <div className="jobs-container">
+      <Container>
+        <Row>
+          <Col>
+            <h1 className="jobs-header">Jobs</h1>
+          </Col>
+        </Row>
 
-      <div>
-        <JobsFilter
-          filters={filters}
-          handleJobFilter={handleJobFilter}
-        />
-        <AddJobBtn
-          handleAddJob={handleAddJob}
-        />
-      </div>
+        <div className="g-3 row row-cols-lg-2 row-cols-md-1 row-cols-1">
+          <JobsFilter
+            filters={filters}
+            handleJobFilter={handleJobFilter}
+            handleAddJob={handleAddJob}
+          />
 
-      <div className="job-card-container">
-        {jobs ? loaded() : loading()}
-      </div>
-
+          <div className="job-card-container">
+            {jobs ? loaded() : loading()}
+          </div>
+        </div>
+      </Container>
     </div>
   )
 }
