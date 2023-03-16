@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
 import AddJobModal from "../AddJobModal/AddJobModal";
 
-import Button from 'react-bootstrap/Button';
+import addButton from "../../assets/addButton.png"
+
+import "./AddJobBtn.css"
 
 const AddJobBtn = ({ handleAddJob }) => {
     const [modalShow, setModalShow] = useState(false);
 
     return (
-        <>
-            <Button variant="primary" onClick={() => setModalShow(true)}>
-                +
-            </Button>
+        <div className="add-job-btn-container">
+            <img src={addButton} alt="add-btn" onClick={() => setModalShow(true)} />
+
 
             <AddJobModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 handleAddJob={handleAddJob}
             />
-        </>
+        </div>
     );
 }
 

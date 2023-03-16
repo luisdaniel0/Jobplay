@@ -1,0 +1,24 @@
+.job-filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+  }
+  
+  .job-filter-btn-group {
+    overflow-x: scroll;
+  }
+  
+  .job-filter-btn-group > * {
+    flex-shrink: 0;
+  }
+  
+  .add-job-btn {
+    margin-left: 10px;
+  }
+  
+  .job-filter-btn-group,
+  .add-job-btn {
+    display: inline-flex;
+  }
+  

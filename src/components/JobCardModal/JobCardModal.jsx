@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import EditJobModal from '../EditJobModal/EditJobModal';
 
+import Star from '../../assets/Star.png'
+import FilledStar from '../../assets/FilledStar.png'
+
+import "./JobCardModal.css"
 
 const JobCardModal = (props) => {
     const [modalShow, setModalShow] = useState(false);
@@ -13,33 +16,47 @@ const JobCardModal = (props) => {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-        >
+            style={{ width: "370px", margin: "auto", position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
+            >
 
             <Modal.Header closeButton />
 
             <Modal.Body>
-                <h3 className="body-title">Job Title:</h3>
-                <p className="body-detail">
-                    {props.title}
-                </p>
+                <div className="job-card-modal-desc">
+                    <p className="job-card-modal-body-title">Job Title:</p>
+                    <p className="job-card-modal-body-detail">
+                        {props.title}
+                    </p>
+                </div>
 
-                <h3 className="body-title">Company:</h3>
-                <p className="body-detail">
-                    {props.company}
-                </p>
+                <div className="job-card-modal-desc">
+                    <p className="job-card-modal-body-title">Company:</p>
+                    <p className="job-card-modal-body-detail">
+                        {props.company}
+                    </p>
+                </div>
 
-                <h3 className="body-title">Status:</h3>
-                <p className="body-detail">
-                    {String(props.status)}
-                </p>
+                <div className="job-card-modal-desc">
+                    <p className="job-card-modal-body-title">Status:</p>
+                    <p className="job-card-modal-body-detail">
+                        {String(props.status)}
+                    </p>
+                </div>
 
-                <Button
+                <button
                     type="submit"
                     className="edit-job-btn"
                     onClick={() => setModalShow(true)}
+                    style={{ display: "inline-block" }}
                 >
                     Edit Job Info
-                </Button>
+                </button>
+
+                <img
+                    src={props.starred ? FilledStar : Star}
+                    style={{ cursor: 'pointer', display: "inline-block", marginLeft: "100px" }}
+                />
+
 
                 <EditJobModal
                     title={props.title}
@@ -50,12 +67,11 @@ const JobCardModal = (props) => {
                     timeAgo={props.timeAgo}
                     showStar={props.showStar}
                     notes={props.notes}
+                    handleDeleteJob={props.handleDeleteJob}
                     handleEditJob={props.handleEditJob}
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                 />
-
-                {props.showStar(props.starred)}
             </Modal.Body>
         </Modal>)
 }

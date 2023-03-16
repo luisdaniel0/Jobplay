@@ -1,2 +1,11 @@
-@import '../../Components/JobCardModal/JobCardModal.css';
-@import '../../Components/AddJobForm/AddJobForm.css';
+.jobs-container {
+    margin-bottom: 5rem;
+}
+
+.jobs-header {
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    font-weight: 600;
+}
