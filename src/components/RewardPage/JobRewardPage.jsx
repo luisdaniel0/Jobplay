@@ -2,8 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getProfile, updateProfile } from "../../services/Profile";
 import { useSelector } from "react-redux";
-import { skillBadge } from "../../assets/badges";
-import reward from "../../assets/SilverSkill.png";
+import { jobBadge } from "../../assets/badges";
+import reward from "../../assets/Gold.png";
 import { useNavigate } from "react-router-dom";
 
 const RewardPage = () => {
@@ -13,18 +13,20 @@ const RewardPage = () => {
 
   const getReward = async (e) => {
     e.preventDefault();
-    skillBadge.map((badge, idx) => {
+    jobBadge.map((badge, idx) => {
       const form = {
         badge: badge.id,
       };
-      const fetchProfile = async () => {
+      const addBadge = async () => {
         const newBadges = await updateProfile(user.profile, form);
         console.log(newBadges);
         console.log(profile);
       };
-      const len = profile.skillsUnlocked.length ? profile.skillsUnlocked.length : 0
-      if (len < badge.point) {
-        fetchProfile();
+      const len = profile.jobApplied.length
+        ? profile.jobApplied.length
+        : 1;
+      if (len === badge.point) {
+        addBadge();
       }
       navigate("/reward", { replace: true });
     });
@@ -38,7 +40,7 @@ const RewardPage = () => {
     fetchProfile();
   }, []);
 
-    if (!Object.keys(profile).length) return <h1>Loading...</h1>;
+  if (!Object.keys(profile).length) return <h1>Loading...</h1>;
 
   return (
     <div className="reward-Page">

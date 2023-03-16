@@ -1,58 +1,107 @@
 export const skillBadge = [
   {
-    id: "64123f1716cbce477cda9259",
-    title: "Bronze Skill",
-    link: "https://i.imgur.com/u4bpJLv.png",
+    id: "641332e47680bdb9a47b47a2",
+    title: "Bronze Skill Badge",
     point: 1,
+    link: "https://i.imgur.com/u4bpJLv.png",
   },
   {
-    id: "64121fca0e9dbcfd21b71647",
-    title: "Silver Skill",
-    link: "https://i.imgur.com/xQ4UL9v.png",
+    id: "641332c47680bdb9a47b479a",
+    title: "Silver Skill Badge",
     point: 2,
-  }
-]
+    link: "https://i.imgur.com/uiudOCT.png",
+  },
+  {
+    id: "641332a17680bdb9a47b4792",
+    title: "Gold Skill Badge",
+    point: 3,
+    link: "https://i.imgur.com/RFJhKev.png",
+  },
+  {
+    id: "6413327a7680bdb9a47b478a",
+    title: "Diamond Skill Badge",
+    point: 4,
+    link: "https://i.imgur.com/9ghOSZ1.png",
+  },
+];
 
 export const jobBadge = [
   {
-    title: "Bronze Job",
+    id: "641332d57680bdb9a47b479e",
+    title: "Bronze Job Badge",
+    point: 1,
     link: "https://i.imgur.com/LuLyMSc.png",
-    color: "#ddf1e1",
   },
   {
-    title: "Silver Job",
+    id: "641332b47680bdb9a47b4796",
+    title: "Silver Job Badge",
+    point: 2,
     link: "https://i.imgur.com/B6BSoH3.png",
-    color: "#ddf1e1",
   },
-]
+  {
+    id: "6413328d7680bdb9a47b478e",
+    title: "Gold Job Badge",
+    point: 3,
+    link: "https://i.imgur.com/lnyGrQz.png",
+  },
+  {
+    id: "641332607680bdb9a47b4786",
+    title: "Diamond Job Badge",
+    point: 4,
+    link: "https://i.imgur.com/KYYITZT.png",
+  },
+];
 
 export const networkBadge = [
   {
-    title: "Bronze Connection",
+    id: "641332dd7680bdb9a47b47a0",
+    title: "Bronze Connection Badge",
+    point: 1,
     link: "https://i.imgur.com/89zDnH2.png",
-    color: "#ddf1e1",
   },
   {
-    title: "Silver Connection",
+    id: "641332bc7680bdb9a47b4798",
+    title: "Silver Connection Badge",
+    point: 2,
     link: "https://i.imgur.com/LPYXICE.png",
-    color: "#ddf1e1",
   },
-]
+  {
+    id: "641332957680bdb9a47b4790",
+    title: "Gold Connection Badge",
+    point: 3,
+    link: "https://i.imgur.com/Mz8iaQd.png",
+  },
+  {
+    id: "641332717680bdb9a47b4788",
+    title: "Diamond Connection Badge",
+    point: 4,
+    link: "https://i.imgur.com/5VwdNV5.png",
+  },
+];
 
 export const starBadge = [
   {
-    title: "Bronze Star",
+    id: "641332e77680bdb9a47b47a4",
+    title: "Bronze Star Badge",
+    point: 1,
     link: "https://i.imgur.com/FifHi9B.png",
-    color: "#ddf1e1",
   },
   {
-    title: "Silver Star",
+    id: "641332cd7680bdb9a47b479c",
+    title: "Silver Star Badge",
+    point: 2,
     link: "https://i.imgur.com/oc32lFJ.png",
-    color: "#ddf1e1",
   },
   {
+    id: "641332aa7680bdb9a47b4794",
     title: "Gold Star Badge",
+    point: 3,
     link: "https://i.imgur.com/fO0wQL5.png",
-    color: "#ddf1e1",
-}
-]
+  },
+  {
+    id: "641332837680bdb9a47b478c",
+    title: "Diamond Star Badge",
+    point: 4,
+    link: "https://i.imgur.com/I4rlBG9.png",
+  },
+];
