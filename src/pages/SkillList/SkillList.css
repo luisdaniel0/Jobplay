@@ -43,14 +43,15 @@
 .pill-button {
   background-color: transparent;
   border: 2px solid #8ac4e1;
-  border-radius: 50px;
+  border-radius: 15px;
   color: black;
   cursor: pointer;
   margin-right: 10px;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: grid;
+  align-items: center;
   font-size: 16px;
   font-weight: 700;
   transition-duration: 0.4s;
