@@ -43,7 +43,7 @@ const EditJobForm = ({ editJobFormData, id, star, handleFavorite, handleUnfavori
                 <img
                     src={star ? FilledStar : Star}
                     onClick={star ? handleUnfavorite : handleFavorite}
-                    style={{ cursor: 'pointer', float: 'right', margin: '38px 20px 0 0' }}
+                    style={{ cursor: 'pointer', float: 'right', margin: '38px 48px 0 0' }}
                 />
 
 
@@ -54,7 +54,7 @@ const EditJobForm = ({ editJobFormData, id, star, handleFavorite, handleUnfavori
                     <Form.Select
                         aria-label="Default select example"
                         name="status"
-                        style={{ width: '50%' }}
+                        style={{ width: '80%' }}
                         onChange={handleEditJobFormChange}
                         required
                     >
