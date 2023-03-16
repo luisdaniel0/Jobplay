@@ -1,14 +1,13 @@
+import React from 'react'
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Star from '../../assets/Star.png'
-import FilledStar from '../../assets/FilledStar.png'
 
 
-function AddJobForm({ star, jobFormData, handleFavorite, handleUnfavorite, handleJobFormChange, handleJobFormSubmit }) {
+const EditJobForm = ({ editJobFormData, handleEditJobFormChange, handleEditJobFormSubmit }) => {
     return (
-        <Form onSubmit={handleJobFormSubmit}>
+        <Form onSubmit={handleEditJobFormSubmit}>
             <Form.Group as={Row} className="mb-3">
                 <Form.Label column sm={2}>
                     Job Title
@@ -18,8 +17,8 @@ function AddJobForm({ star, jobFormData, handleFavorite, handleUnfavorite, handl
                         required
                         name="title"
                         placeholder="Job Title"
-                        value={jobFormData.title}
-                        onChange={handleJobFormChange}
+                        value={editJobFormData.title}
+                        onChange={handleEditJobFormChange}
 
                     />
                 </Col>
@@ -34,8 +33,8 @@ function AddJobForm({ star, jobFormData, handleFavorite, handleUnfavorite, handl
                         required
                         name="company"
                         placeholder="Company"
-                        value={jobFormData.company}
-                        onChange={handleJobFormChange}
+                        value={editJobFormData.company}
+                        onChange={handleEditJobFormChange}
                     />
                 </Col>
             </Form.Group>
@@ -49,7 +48,7 @@ function AddJobForm({ star, jobFormData, handleFavorite, handleUnfavorite, handl
                         aria-label="Default select example"
                         name="status"
                         style={{ width: '50%' }}
-                        onChange={handleJobFormChange}
+                        onChange={handleEditJobFormChange}
                         required
                     >
                         <option selected disabled>Select</option>
@@ -73,17 +72,11 @@ function AddJobForm({ star, jobFormData, handleFavorite, handleUnfavorite, handl
             <Form.Control className="mb-3"
                 as="textarea"
                 name="notes"
-                placeholder="Notes"
+                placeholder={editJobFormData.notes}
                 id="notes"
-                value={jobFormData.notes}
-                onChange={handleJobFormChange}
+                value={editJobFormData.notes}
+                onChange={handleEditJobFormChange}
                 style={{ height: '100px' }}
-            />
-
-            <img
-                src={star ? FilledStar : Star}
-                onClick={star ? handleUnfavorite : handleFavorite}
-                style={{ cursor: 'pointer', float: 'right' }}
             />
 
             <Form.Group as={Row} className="mb-3">
@@ -92,7 +85,7 @@ function AddJobForm({ star, jobFormData, handleFavorite, handleUnfavorite, handl
                 </Col>
             </Form.Group>
         </Form>
-    );
+    )
 }
 
-export default AddJobForm;
+export default EditJobForm

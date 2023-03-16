@@ -8,12 +8,26 @@ import { useDispatch, useSelector } from 'react-redux'
 const AddJobModal = (props) => {
   const { loading, user } = useSelector((state) => state.auth)
 
+  const [star, setStar] = useState(false)
+
   const [jobFormData, setFormData] = useState({
     title: "",
     company: "",
     status: "",
+    starred: false,
+    notes: "",
     applicant: user.profile,
   })
+
+  const handleFavorite = async () => {
+    setFormData({ ...jobFormData, starred: true })
+    setStar(true)
+  }
+
+  const handleUnfavorite = async () => {
+    setFormData({ ...jobFormData, starred: false })
+    setStar(false)
+  }
 
   const handleJobFormChange = (event) => {
     setFormData({ ...jobFormData, [event.target.name]: event.target.value })
@@ -24,6 +38,7 @@ const AddJobModal = (props) => {
     props.handleAddJob(jobFormData)
   }
 
+
   return (
     <Modal
       {...props}
@@ -32,15 +47,14 @@ const AddJobModal = (props) => {
       centered
     >
 
-      <Modal.Header closeButton>
-        {/* <Modal.Title id="contained-modal-title-vcenter">
-          Add Job
-        </Modal.Title> */}
-      </Modal.Header>
+      <Modal.Header closeButton/>
 
       <Modal.Body>
         <AddJobForm
+          star={star}
           jobFormData={jobFormData}
+          handleFavorite={handleFavorite}
+          handleUnfavorite={handleUnfavorite}
           handleJobFormChange={handleJobFormChange}
           handleJobFormSubmit={handleJobFormSubmit}
         />

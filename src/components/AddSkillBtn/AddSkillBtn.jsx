@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import AddSkillModal from "../AddSkillModal/AddSkillModal";
+import './AddSkillBtn.css'
 
 import Button from 'react-bootstrap/Button';
 
@@ -8,7 +9,7 @@ const AddSkillBtn = ({ handleAddSkill }) => {
 
     return (
         <>
-            <Button variant="primary" onClick={() => setModalShow(true)}>
+            <Button className='add-skill-btn' variant="primary" onClick={() => setModalShow(true)}>
                 +
             </Button>
 
