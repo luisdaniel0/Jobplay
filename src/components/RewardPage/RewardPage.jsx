@@ -22,16 +22,13 @@ const RewardPage = () => {
         console.log(newBadges);
         console.log(profile);
       };
-      len = profile.skillsUnlocked.length ? profile.skillsUnlocked.length : 0
+      const len = profile.skillsUnlocked.length ? profile.skillsUnlocked.length : 0
       if (len < badge.point) {
         fetchProfile();
       }
       navigate("/reward", { replace: true });
     });
   };
-
-  if (!Object.keys(profile).length) return <h1>Loading...</h1>;
-
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -40,6 +37,8 @@ const RewardPage = () => {
     };
     fetchProfile();
   }, []);
+
+    if (!Object.keys(profile).length) return <h1>Loading...</h1>;
 
   return (
     <div className="reward-Page">
