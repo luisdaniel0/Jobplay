@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { index, createSkill } from '../../services/skillService';
-import { Col, Card, Container, Row, ButtonGroup, Button } from 'react-bootstrap';
+import { Col, Card, Container, Row, ButtonGroup } from 'react-bootstrap';
 import AddSkillBtn from '../../components/AddSkillBtn/AddSkillBtn';
 import './SkillList.css';
 
