@@ -51,3 +51,12 @@
   padding: 0;
   margin-bottom: 0;
 }
+
+.reward-Page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 5rem;
+}

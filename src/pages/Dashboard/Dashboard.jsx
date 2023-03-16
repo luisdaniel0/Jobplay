@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { logout } from "../../store/slices/authSlice";
 import { getProfile } from "../../services/Profile";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import DashCard from "../../components/DashCard/DashCard";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -11,7 +10,6 @@ import { dashInfo } from "../../assets/dashcard";
 function DashBoard() {
   const { user } = useSelector((state) => state.auth);
   const [profile, setProfile] = useState({});
-  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProfile = async () => {

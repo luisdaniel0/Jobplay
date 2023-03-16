@@ -10,3 +10,12 @@ export const getProfile = async (id) => {
   }
 };
 
+export const updateProfile = async (id, data) => {
+  try {
+    const response = await api.put(`/api/profiles/id/${id}`, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+

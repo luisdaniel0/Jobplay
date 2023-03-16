@@ -24,6 +24,13 @@
   width: 20rem;
 }
 
+.card-body
+
+.dash-title {
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
 @media only screen and (min-width: 992px) {
   .card-cont {
     width: 100%;
