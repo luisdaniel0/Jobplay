@@ -63,25 +63,25 @@ const NetworkList = () => {
       return (
       <div key={network._id} className="network-card">
       <Card>
-        <Card.Body>
-          <Card.Title>
-            { networkFilter === "events" ? null : <h1>{network?.connection[0]?.name}</h1>}
+        <Card.Body className='network-body'>
+          <Card.Title className='network-card-title name'>
+            { networkFilter === "events" ? null : <h1 className='network-card-h1 name'>{network?.connection[0]?.name}</h1>}
           </Card.Title>
-          <Card.Title>
-          { networkFilter === "events" ? null : <h1>{network?.connection[0]?.company}</h1>}
-          { networkFilter === "events" ? null : <h1>{network?.connection[0]?.title}</h1>}
+          <Card.Title className='network-card-title'>
+          { networkFilter === "events" ? null : <h1 className='network-card-h1' id='company'>{network?.connection[0]?.company}</h1>}
+          { networkFilter === "events" ? null : <h1 className='network-card-h1' id='position'>{network?.connection[0]?.title}</h1>}
           </Card.Title>
-          <Card.Title>
-          { networkFilter === "events" ? <h1>{network?.eventName}</h1> : null}
-          { networkFilter === "people" || networkFilter === "events" ? null : <h1>{network?.eventName}</h1>}
+          <Card.Title className='network-card-title'>
+          { networkFilter === "events" ? <h1 className='network-card-h1'>{network?.eventName}</h1> : null}
+          { networkFilter === "people" || networkFilter === "events" ? null : <h1 className='network-card-h1'>{network?.eventName}</h1>}
           </Card.Title>
-          <Card.Text className='text-muted'>
+          <Card.Text className='network-card-text'>
             Added {(() => {
               const {days, hours, minutes } = getTimeDifference(network.createdAt)
-                if (days === 1) return `Added ${days} day ago`
-                if (days > 1) return `Added ${days} day ago`
-                if (hours) return `Added ${hours} hours ago`
-                return `Added ${minutes} minutes ago`
+                if (days === 1) return `${days} day ago`
+                if (days > 1) return `${days} day ago`
+                if (hours) return `${hours} hours ago`
+                return `${minutes} minutes ago`
             })()}
           </Card.Text>
         </Card.Body>
@@ -145,7 +145,7 @@ const NetworkList = () => {
             </Col>
           </Row>
         </div>
-        <Row>{networks ? loaded() : loading()}</Row>
+        <Row className='network-card-row'>{networks ? loaded() : loading()}</Row>
       </Container>
     </div>
   )

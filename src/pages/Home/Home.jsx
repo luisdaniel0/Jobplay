@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import jobPlaylogo from "../../components/imgs/jobPlaylogo.png";
+import jobPlaylogo from "../../components/imgs/jobplaylogo.png"
 import startbutton from "../../components/imgs/startbutton.png";
 import avatar from "../../assets/Martin.png";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import AddNetworkModal from '../AddNetworkModal/AddNetworkModal';
+import './AddNetworkBtn.css'
 import Button from 'react-bootstrap/Button';
 
 const AddNetworkBtn = ({ handleaddnetwork }) => {
@@ -7,7 +8,7 @@ const AddNetworkBtn = ({ handleaddnetwork }) => {
 
     return (
         <>
-            <Button variant="primary" onClick={() => setModalShow(true)}>
+            <Button className='add-network-btn' variant="primary" onClick={() => setModalShow(true)}>
                 +
             </Button>
 

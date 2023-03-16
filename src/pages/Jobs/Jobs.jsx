@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import JobCard from '../../Components/JobCard/JobCard'
-import JobsFilter from '../../Components/JobFilter/JobFilter'
-
+import JobCard from '../../components/JobCard/JobCard'
+import JobFilter from '../../components/JobFilter/JobFilter'
 import { Col, Row, Container } from 'react-bootstrap'
 
 import * as jobService from '../../services/jobService.js'
@@ -108,7 +107,7 @@ const Jobs = () => {
         </Row>
 
         <div className="g-3 row row-cols-lg-2 row-cols-md-1 row-cols-1">
-          <JobsFilter
+          <JobFilter
             filters={filters}
             handleJobFilter={handleJobFilter}
             handleAddJob={handleAddJob}
