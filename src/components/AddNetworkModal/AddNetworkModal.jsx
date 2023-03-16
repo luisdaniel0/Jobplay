@@ -1,27 +1,10 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { useSelector } from 'react-redux'
+
 import AddNetworkForm from '../AddNetworkForm/AddNetworkForm';
 
 
 const AddNetworkModal = (props) => {
-  const { loading, user } = useSelector((state) => state.auth)
-
-  const [networkFormData, setNetworkFormData] = useState({
-    name: "",
-    title: "",
-    company: "",
-    eventName: "",
-    networker: user.profile,
-  })
-
-  const handleNetworkFormChange = (event) => {
-    setNetworkFormData({ ...networkFormData, [event.target.name]: event.target.value })
-  }
-
-  const handleNetworkFormSubmit = (event) => {
-    props.handleAddNetwork(networkFormData)
-  }
 
   return (
     <Modal
@@ -39,9 +22,6 @@ const AddNetworkModal = (props) => {
 
       <Modal.Body>
         <AddNetworkForm
-          networkFormData={networkFormData}
-          handleNetworkFormChange={handleNetworkFormChange}
-          handleNetworkFormSubmit={handleNetworkFormSubmit}
         />
       </Modal.Body>
 
