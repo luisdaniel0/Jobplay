@@ -1,0 +1,8 @@
+.unauthorized {
+  display: flex;
+  justify-content: center;
+}
+
+.filler {
+  text-align: center;
+}

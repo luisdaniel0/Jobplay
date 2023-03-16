@@ -44,6 +44,7 @@ const RewardPage = () => {
 
   return (
     <div className="reward-Page">
+      <h1 className="rewardpage-title">Congrats!</h1>
       <img className="home-logo" src={reward}></img>
       <button onClick={getReward}>Claim your badge here!</button>
     </div>

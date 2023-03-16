@@ -42,8 +42,11 @@ const RewardPage = () => {
 
   return (
     <div className="reward-Page">
+      <h1 className="rewardpage-title">Congrats!</h1>
+      <p>You've earned 10 points.</p>
       <img className="home-logo" src={reward}></img>
       <button onClick={getReward}>Claim your badge here!</button>
+      <p className="rewardpage-body">"Every accomplishment starts with the decision to try." -0 John F. Kennedy</p>
     </div>
   );
 };
