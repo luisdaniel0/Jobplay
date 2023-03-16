@@ -50,14 +50,14 @@ function Reward() {
         xs={3}
         md={3}
         lg={4}
-        className="g-3"
-        style={{ background: "#e5dcd4", height: "80vh", width: "90vw", margin: "1rem", borderRadius: "1rem" }}
+        className="g-3 reward-row"
+        style={{ background: "#e5dcd4", width: "90vw", margin: "1rem", borderRadius: "1rem" }}
       >
         {profile.badge.map((badge, idx) => (
-          <Col key={idx}>
+          <Col key={idx} className="reward-col">
             <Card.Img
-              style={{ width: "7rem" }}
-              className="card-img"
+              style={{ width: "7rem"}}
+              className="card-img-reward"
               src={badge.photo}
             />
             {/* <Card.Body>
