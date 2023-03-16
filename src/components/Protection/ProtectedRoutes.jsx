@@ -9,7 +9,8 @@ const ProtectedRoutes = () => {
     return (
       <div className="unauthorized">
         <NavLink to="/login">
-          <h1 className="Filler">Unauthorized, Click to go to Login Screen</h1>
+          <h1 className="filler">Unauthorized</h1>
+          <p className="filler">Click to go to Login Screen</p>
         </NavLink>
       </div>
     );
