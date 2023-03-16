@@ -57,12 +57,11 @@ JobPlay is an innovative and engaging web application that revolutionizes the wa
 ![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 ---
-
 # Ice Box 🧊
-- [] Social Media Integration
-- [] Job Recommendations
-- [] Skill Challenges and Peer Collaboration
-- [] Calendar Integration
-- [] Consultation System
-- [] Customizable Leaderboards
-- [] More Rewards, Badges
+- [ ] Social Media Integration
+- [ ] Job Recommendations
+- [ ] Skill Challenges and Peer Collaboration
+- [ ] Calendar Integration
+- [ ] Consultation System
+- [ ] Customizable Leaderboards
+- [ ] More Rewards, Badges
