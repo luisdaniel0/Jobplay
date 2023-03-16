@@ -14,7 +14,6 @@ function DashBoard() {
     <div className="dashboard-container">
       <button onClick={show}>DEBUG User Console</button>
       <button onClick={() => dispatch(logout())}>logout</button>
-
     </div>
   );
 }

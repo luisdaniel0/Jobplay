@@ -8,7 +8,7 @@ const NetworkList = () => {
   const [networks, setNetworks] = useState([])
   const [networkFilter, setNetworkFilter] = useState('all')
 
-  const handleAddNetwork = async (networkData) => {
+  const handleaddnetwork = async (networkData) => {
     const newNetwork  = await networkService.create(networkData)
     setNetworks([newNetwork, ...networks])
   }
@@ -128,7 +128,7 @@ const NetworkList = () => {
             </ButtonGroup>
             </Col>
             <Col className="d-flex justify-content-end">
-              <AddNetworkBtn handleAddNetwork={handleAddNetwork} />
+              <AddNetworkBtn handleaddnetwork={handleaddnetwork} />
             </Col>
           </Row>
         </div>
