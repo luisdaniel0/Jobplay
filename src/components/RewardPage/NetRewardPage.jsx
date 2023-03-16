@@ -24,7 +24,7 @@ const RewardPage = () => {
       };
       const len = profile.networksAchieved.length
         ? profile.networksAchieved.length
-        : 0;
+        : 1;
       if (len === badge.point) {
         addBadge();
       }

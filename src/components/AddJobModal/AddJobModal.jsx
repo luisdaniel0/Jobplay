@@ -35,7 +35,8 @@ const AddJobModal = (props) => {
     setFormData({ ...jobFormData, [event.target.name]: event.target.value })
   }
 
-  const handleJobFormSubmit = () => {
+  const handleJobFormSubmit = (e) => {
+    e.preventDefault()
     props.handleAddJob(jobFormData)
     navigate("/jobreward", { replace: true });
   }

@@ -22,7 +22,7 @@ const RewardPage = () => {
       };
       const len = profile.skillsUnlocked.length
         ? profile.skillsUnlocked.length
-        : 0;
+        : 1;
       if (len === badge.point) {
         addBadge();
       }

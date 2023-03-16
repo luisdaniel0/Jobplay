@@ -24,7 +24,7 @@ const RewardPage = () => {
       };
       const len = profile.jobApplied.length
         ? profile.jobApplied.length
-        : 0;
+        : 1;
       if (len === badge.point) {
         addBadge();
       }
