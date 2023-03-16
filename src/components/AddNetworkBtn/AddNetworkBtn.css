@@ -1,0 +1,16 @@
+.add-network-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid black;
+  font-size: 32px;
+  color: black;
+  padding: 0;
+  line-height: 0;
+  vertical-align: middle;
+}
