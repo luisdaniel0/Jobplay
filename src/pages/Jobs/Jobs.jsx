@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import JobCard from '../../Components/JobCard/JobCard'
-import JobsFilter from '../../Components/JobFilter/JobFilter'
-import AddJobBtn from '../../Components/AddJobBtn/AddJobBtn'
+import JobCard from '../../components/JobCard/JobCard'
+import JobFilter from '../../components/JobFilter/JobFilter'
+import AddJobBtn from '../../components/AddJobBtn/AddJobBtn'
 
 import * as jobService from '../../services/jobService.js'
 
@@ -90,7 +90,7 @@ const Jobs = () => {
       <h1 style={{ textDecoration: "underline" }}>Jobs</h1>
 
       <div>
-        <JobsFilter
+        <JobFilter
           filters={filters}
           handleJobFilter={handleJobFilter}
         />

@@ -25,7 +25,6 @@ function App() {
           <Route path="/network" element={<NetworkList />} />
           <Route path="/jobs/" element={<Jobs />} />
         </Route>
-
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
