@@ -23,7 +23,6 @@ const DashCard = ({ card, profile}) => {
     }
   }
 
-  console.log(card)
   if (!Object.keys(profile).length) return <h1>Loading...</h1>;
   
   return (

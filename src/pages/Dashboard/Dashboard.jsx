@@ -18,7 +18,7 @@ function DashBoard() {
     };
     fetchProfile();
   }, []);
-
+console.log(profile)
   if (!Object.keys(profile).length) return <h1>Loading...</h1>;
   
   return (

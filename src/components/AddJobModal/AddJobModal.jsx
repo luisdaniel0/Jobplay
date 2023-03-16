@@ -5,10 +5,11 @@ import AddJobForm from '../AddJobForm/AddJobForm'
 import { useDispatch, useSelector } from 'react-redux'
 
 import "./AddJobModal.css"
+import { useNavigate } from "react-router-dom";
 
 const AddJobModal = (props) => {
   const { loading, user } = useSelector((state) => state.auth)
-
+  const navigate = useNavigate();
   const [star, setStar] = useState(false)
 
   const [jobFormData, setFormData] = useState({
@@ -36,6 +37,7 @@ const AddJobModal = (props) => {
 
   const handleJobFormSubmit = () => {
     props.handleAddJob(jobFormData)
+    navigate("/jobreward", { replace: true });
   }
 
 

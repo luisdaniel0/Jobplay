@@ -20,7 +20,7 @@ const AddSkillModal = (props) => {
 
   const handleSkillFormSubmit = (event) => {
     props.handleAddSkill(skillFormData)
-    navigate("/rewardpage", { replace: true });
+    navigate("/skillreward", { replace: true });
   }
 
   return (
