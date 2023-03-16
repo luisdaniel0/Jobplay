@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as networkService from '../../services/networkService'
 import { Col, Card, Container, Row, ButtonGroup, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'
+import AddNetworkBtn from '../../components/AddNetworkBtn/AddNetworkBtn';
 import './NetworkList.css'
 
 const NetworkList = () => {
@@ -128,7 +128,7 @@ const NetworkList = () => {
             </ButtonGroup>
             </Col>
             <Col className="d-flex justify-content-end">
-              {/* <AddSkillBtn handleAddSkill={handleAddSkill} /> */}
+              <AddNetworkBtn handleAddNetwork={handleAddNetwork} />
             </Col>
           </Row>
         </div>
