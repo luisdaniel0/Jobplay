@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import AddSkillForm from '../AddSkillForm/AddSkillForm'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 
 
 const AddSkillModal = (props) => {
   const { loading, user } = useSelector((state) => state.auth)
+  const navigate = useNavigate();
 
   const [skillFormData, setSkillFormData] = useState({
     skillName: "",
@@ -18,6 +20,7 @@ const AddSkillModal = (props) => {
 
   const handleSkillFormSubmit = (event) => {
     props.handleAddSkill(skillFormData)
+    navigate("/skillreward", { replace: true });
   }
 
   return (

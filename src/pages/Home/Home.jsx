@@ -1,29 +1,32 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import jobPlaylogo from "../../components/imgs/jobPlaylogo.png";
+import startbutton from "../../components/imgs/startbutton.png";
+import avatar from "../../assets/Martin.png";
+import { useDispatch, useSelector } from "react-redux";
 
 function Home() {
-  // const user = { name: "Hello" };
-  const user = null;
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <div className="home-container">
       <div className="home-logo-container">
-        <img
-          className="home-logo"
-          src="https://images-platform.99static.com//gLPHksdH2OdHv_KDM_cwpKUtyCE=/115x100:1067x1052/fit-in/500x500/99designs-contests-attachments/117/117444/attachment_117444264"
-        ></img>
+        <img className="home-logo" src={jobPlaylogo}></img>
       </div>
       <div className="home-center">
-        <img
-          className="home-avatar"
-          src="https://www.pngplay.com/wp-content/uploads/10/Avatar-The-Last-Airbender-PNG-Photo-Image.png"
-        ></img>
+        <img className="home-logo" src={avatar}></img>
       </div>
       {user ? (
         <div className="home-bot">
-          Welcome Back
+          <p>Welcome Back!</p>
+          <p className="home-text">The job-searching journey is tough.</p>
+          <p className="home-text">
+            But we’re here to help you celebrate your accomplishments!
+          </p>
+
           <Link to="/dashboard" type="submit" className="home-btns">
-            Let's Jump in
+            <img className="home-logo" src={startbutton}></img>
           </Link>
         </div>
       ) : (

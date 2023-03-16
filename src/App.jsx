@@ -10,9 +10,12 @@ import NavBS from "./components/Navbar/Nav.jsx"
 import Jobs from "./pages/Jobs/Jobs";
 import SkillList from "./pages/SkillList/SkillList";
 import NetworkList from "./pages/NetworkList/NetworkList";
-
+import Badges from "./pages/Badges/Badges";
 import "./App.css";
-
+import Reward from "./pages/Reward/Reward";
+import SkillRewardPage from "./components/RewardPage/SkillRewardPage";
+import JobRewardPage from "./components/RewardPage/JobRewardPage";
+import NetRewardPage from "./components/RewardPage/NetRewardPage";
 
 function App() {
   return (
@@ -24,6 +27,11 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/network" element={<NetworkList />} />
           <Route path="/jobs/" element={<Jobs />} />
+          <Route path="/reward/" element={<Reward />} />
+          <Route path="/skillreward" element={<SkillRewardPage />} />
+          <Route path="/jobreward" element={<JobRewardPage />} />
+          <Route path="/netreward" element={<NetRewardPage />} />
+          <Route path="/badge" element={<Badges />}/>
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

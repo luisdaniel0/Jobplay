@@ -1,0 +1,42 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  z-index: -5;
+  height: 100%;
+  width: 100vw;
+  margin-top: 1rem;
+}
+
+.rock {
+  height: 5rem;
+}
+
+.card-img {
+  display: flex;
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+.card-cont {
+  width: 20rem;
+}
+
+.card-body
+
+.dash-title {
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+@media only screen and (min-width: 992px) {
+  .card-cont {
+    width: 100%;
+    
+  }
+  .App {
+    height: 100vh;
+  }
+}

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import JobCard from '../../components/JobCard/JobCard'
-import JobFilter from '../../components/JobFilter/JobFilter'
-import AddJobBtn from '../../components/AddJobBtn/AddJobBtn'
+import JobCard from '../../Components/JobCard/JobCard'
+import JobsFilter from '../../Components/JobFilter/JobFilter'
+
+import { Col, Row, Container } from 'react-bootstrap'
 
 import * as jobService from '../../services/jobService.js'
 
+import "./Jobs.css"
 
 const Jobs = () => {
-  const days = "X"
-  const filters = ['All Jobs', 'Applied', 'Not-Applied', 'In-Progress', 'Starred']
+  const filters = ['All Jobs', 'Applied', 'In-Progress', 'Starred']
 
   const [jobs, setJobs] = useState()
   const [filteredJobs, setFilteredJobs] = useState()
@@ -41,6 +42,14 @@ const Jobs = () => {
     window.location.reload()
   }
 
+  const handleEditJob = async (id, jobData) => {
+    const editedJob = await jobService.updateJob(id, jobData)
+    const newJobsArray = jobs.map(job =>
+      job._id === editedJob._id ? editedJob : job
+    )
+    setJobs(newJobsArray)
+  }
+
   useEffect(() => {
     const getAllJobs = async () => {
       const data = await jobService.index()
@@ -54,14 +63,19 @@ const Jobs = () => {
   const loaded = () => {
     let allJobs = filteredJobs.map(job => {
       return (
-        <div key={job._id}>
+        <div
+          key={job._id}
+          className="d-flex justify-content-center align-item-center col"
+        >
           <JobCard
             title={job.title}
             company={job.company}
             status={job.status}
             starred={job.starred}
+            notes={job.notes}
             id={job._id}
             createdDate={job.createdAt}
+            handleEditJob={handleEditJob}
             handleDeleteJob={handleDeleteJob}
           />
         </div>
@@ -83,26 +97,28 @@ const Jobs = () => {
     )
   }
 
-  console.log(jobs)
 
   return (
-    <div className="container-fluid">
-      <h1 style={{ textDecoration: "underline" }}>Jobs</h1>
+    <div className="jobs-container">
+      <Container>
+        <Row>
+          <Col>
+            <h1 className="jobs-header">Jobs</h1>
+          </Col>
+        </Row>
 
-      <div>
-        <JobFilter
-          filters={filters}
-          handleJobFilter={handleJobFilter}
-        />
-        <AddJobBtn
-          handleAddJob={handleAddJob}
-        />
-      </div>
+        <div className="g-3 row row-cols-lg-2 row-cols-md-1 row-cols-1">
+          <JobsFilter
+            filters={filters}
+            handleJobFilter={handleJobFilter}
+            handleAddJob={handleAddJob}
+          />
 
-      <div className="job-card-container">
-        {jobs ? loaded() : loading()}
-      </div>
-
+          <div className="job-card-container">
+            {jobs ? loaded() : loading()}
+          </div>
+        </div>
+      </Container>
     </div>
   )
 }

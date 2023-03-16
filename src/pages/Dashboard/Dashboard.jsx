@@ -1,19 +1,37 @@
-import React from "react";
-import { logout } from "../../store/slices/authSlice";
-import { useDispatch, useSelector } from "react-redux";
-// import "./DashBoard.css";
+import { useState, useEffect } from "react";
+import { getProfile } from "../../services/Profile";
+import { useSelector } from "react-redux";
+import DashCard from "../../components/DashCard/DashCard";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./Dashboard.css";
+import { dashInfo } from "../../assets/dashcard";
 
 function DashBoard() {
   const { user } = useSelector((state) => state.auth);
-  const dispatch = useDispatch()
+  const [profile, setProfile] = useState({});
 
-  const show = () => {
-    console.log(user)
-  }
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profile = await getProfile(user.profile);
+      setProfile(profile);
+    };
+    fetchProfile();
+  }, []);
+console.log(profile)
+  if (!Object.keys(profile).length) return <h1>Loading...</h1>;
+  
   return (
-    <div className="dashboard-container">
-      <button onClick={show}>DEBUG User Console</button>
-      <button onClick={() => dispatch(logout())}>logout</button>
+    <div className="dashboard">
+      <h1>Dashboard</h1>
+      <Row xs={1} md={1} lg={2} className="g-3">
+        {dashInfo.map((card, idx) => (
+          <Col key={idx} className="d-flex justify-content-center align-item-center">
+            <DashCard card={card} profile={profile} />
+          </Col>
+        ))}
+      </Row>
+      <div className="rock"></div>
     </div>
   );
 }

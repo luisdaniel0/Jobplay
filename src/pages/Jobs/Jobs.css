@@ -1,0 +1,11 @@
+.jobs-container {
+    margin-bottom: 5rem;
+}
+
+.jobs-header {
+    text-align: left;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 40px;
+    font-weight: 600;
+}

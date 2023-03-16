@@ -1,0 +1,62 @@
+.reward {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  z-index: -5;
+  height: 100%;
+  width: 100vw;
+  margin-top: 1rem;
+}
+
+.reward-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reward-top {
+  all: unset;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100vw;
+
+}
+
+.logout {
+  grid-column: 5;
+  margin-right: 0.9rem;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.reward-name {
+  grid-column: 3;
+}
+
+.reward-logo {
+  width: 60%;
+}
+
+.award-text {
+  align-self: flex-start;
+  margin-left: 1.4rem;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.reward-Page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 5rem;
+}

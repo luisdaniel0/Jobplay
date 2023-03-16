@@ -1,0 +1,39 @@
+.job-card-modal-desc {
+    margin-bottom: 20px;
+}
+
+.job-card-modal-body {
+    margin: 0 27px 0 27px;
+    padding: 0;
+}
+
+.job-card-modal-body-title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0;
+}
+
+.job-card-modal-body-detail {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    margin: 0;
+}
+
+.edit-job-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    margin-top: 21px;
+    font-size: 18px;
+    line-height: 27px;
+    width: 165px;
+    height: 52px;
+    background-color: #8AC4E1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border-color: #8AC4E1;
+}
