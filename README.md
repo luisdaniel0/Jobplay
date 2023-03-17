@@ -9,7 +9,7 @@ JobPlay is an innovative and engaging web application that revolutionizes the wa
 
 ---
 
-📲 [App Demo](https://jobplay.netlify.app/)
+📲 [App Demo](https://job-play.netlify.app/)
 ---
 ⬅️ [Back-End Repo](https://github.com/plam1216/jobplay-backend)
 
