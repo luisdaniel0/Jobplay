@@ -22,14 +22,14 @@ export const dashInfo = [
     title: "Connections",
     icon: connectIcon,
     body: "New Connections this week",
-    link: "networking",
+    link: "networks",
     color: "#f4e6db",
   },
   {
     title: "Event",
     icon: calenderIcon,
     body: "Events this week",
-    link: "networking",
+    link: "networks",
     color: "#f9f7e6",
   },
 ]
